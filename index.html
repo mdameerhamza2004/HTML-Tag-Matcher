@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Tag Matcher - Stacks Project</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <i class="fas fa-code"></i>
+                <h1>HTML Tag Matcher</h1>
+            </div>
+            <p class="subtitle">Validate and match HTML tags using Stack Data Structure</p>
+        </header>
+
+        <main class="main-content">
+            <div class="input-section">
+                <div class="input-header">
+                    <h2><i class="fas fa-edit"></i> Input HTML Code</h2>
+                    <div class="button-group">
+                        <button id="clearBtn" class="btn btn-secondary">
+                            <i class="fas fa-trash"></i> Clear
+                        </button>
+                        <button id="sampleBtn" class="btn btn-secondary">
+                            <i class="fas fa-file-code"></i> Load Sample
+                        </button>
+                    </div>
+                </div>
+                <textarea id="htmlInput"
+                    placeholder="Enter your HTML code here...&#10;&#10;Example:&#10;&lt;div&gt;&#10;  &lt;p&gt;Hello World&lt;/p&gt;&#10;&lt;/div&gt;"></textarea>
+            </div>
+
+            <div class="action-section">
+                <button id="validateBtn" class="btn btn-primary">
+                    <i class="fas fa-check-circle"></i> Validate Tags
+                </button>
+                <button id="stepBtn" class="btn btn-info">
+                    <i class="fas fa-play"></i> Step Through
+                </button>
+            </div>
+
+            <div class="output-section">
+                <div class="output-header">
+                    <h2><i class="fas fa-chart-bar"></i> Results</h2>
+                    <div class="status-indicator" id="statusIndicator">
+                        <span class="status-text">Ready</span>
+                    </div>
+                </div>
+
+                <div class="results-container">
+                    <div class="result-card">
+                        <h3><i class="fas fa-list"></i> Tag Analysis</h3>
+                        <div id="tagAnalysis" class="analysis-content">
+                            <p class="placeholder">Enter HTML code and click "Validate Tags" to see the analysis</p>
+                        </div>
+                    </div>
+
+                    <div class="result-card">
+                        <h3><i class="fas fa-layer-group"></i> Stack Visualization</h3>
+                        <div id="stackVisualization" class="stack-container">
+                            <div class="stack-placeholder">
+                                <i class="fas fa-layer-group"></i>
+                                <p>Stack will appear here during validation</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="result-card full-width">
+                    <h3><i class="fas fa-info-circle"></i> Detailed Report</h3>
+                    <div id="detailedReport" class="report-content">
+                        <p class="placeholder">Detailed validation report will appear here</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <section class="info-section">
+            <div class="info-card">
+                <h3><i class="fas fa-lightbulb"></i> How It Works</h3>
+                <p>This HTML Tag Matcher uses a <strong>Stack data structure</strong> to validate HTML tags:</p>
+                <ol>
+                    <li>Scans the HTML code character by character</li>
+                    <li>When an opening tag is found, it's pushed onto the stack</li>
+                    <li>When a closing tag is found, it's matched with the top of the stack</li>
+                    <li>If tags don't match or stack is empty, an error is reported</li>
+                    <li>Valid HTML should have an empty stack at the end</li>
+                </ol>
+            </div>
+
+            <div class="info-card">
+                <h3><i class="fas fa-exclamation-triangle"></i> Common Issues</h3>
+                <ul>
+                    <li><strong>Unclosed tags:</strong> Missing closing tags like <code>&lt;div&gt;</code> without
+                        <code>&lt;/div&gt;</code></li>
+                    <li><strong>Mismatched tags:</strong> Opening and closing tags don't match</li>
+                    <li><strong>Extra closing tags:</strong> More closing tags than opening tags</li>
+                    <li><strong>Nested incorrectly:</strong> Tags not properly nested</li>
+                </ul>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>&copy; 2024 HTML Tag Matcher - Stacks Project. Built with HTML, CSS, and JavaScript.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
